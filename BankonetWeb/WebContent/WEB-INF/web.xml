@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>BankonetWeb</display-name>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Date Servlet</servlet-name>
+    <servlet-class>com.bankonet.servlet.DateServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>Traiter Login Servlet</servlet-name>
+    <servlet-class>com.bankonet.servlet.TraiterLoginServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Traiter Login Servlet</servlet-name>
+    <url-pattern>/traiterLogin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Compte Courant Liste Servlet</servlet-name>
+    <servlet-class>com.bankonet.servlet.CompteCourantListeServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Compte Courant Liste Servlet</servlet-name>
+    <url-pattern>/CompteCourantListe</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Compte Epargne Liste Servlet</servlet-name>
+    <servlet-class>com.bankonet.servlet.CompteEpargneListeServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Compte Epargne Liste Servlet</servlet-name>
+    <url-pattern>/CompteEpargneListe</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Detail Compte Epargne Servlet</servlet-name>
+    <servlet-class>com.bankonet.servlet.DetailCompteEpargneServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Detail Compte Epargne Servlet</servlet-name>
+    <url-pattern>/DetailCompteEpargne</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Init Virement Servlet</servlet-name>
+    <servlet-class>com.bankonet.servlet.InitVirementServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Init Virement Servlet</servlet-name>
+    <url-pattern>/initVirement</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+       <filter-name>Time Filter</filter-name>
+       <filter-class>com.bankonet.filter.TimeFilter</filter-class>
+    </filter>
+  <filter-mapping>
+    <filter-name>Time Filter</filter-name>
+    <url-pattern>/TimeFilter</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>Time Filter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <error-page>
+    <error-code>404</error-code>
+    <location>/erreur.jsp</location>
+  </error-page>
+</web-app>
